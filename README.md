@@ -18,7 +18,7 @@ BrickStore is an e-commerce platform for construction materials and services. Bu
 ## 📌 Installation & Setup
 ### **1. Clone the repository:**
 ```bash
-git clone https://github.com/yourusername/BrickStore.git
+git clone https://github.com/cttbiel/BrickStore.git
 cd BrickStore
 ```
 
@@ -43,7 +43,7 @@ npm start
 Feel free to contribute! Fork the project, create a branch, and submit a pull request. 
 
 ## 📧 Contact
-For any questions or suggestions, contact **your email or GitHub profile**.
+For any questions or suggestions, contact **cttbiel@gmail.com or @CttBiel**.
 
 ---
 © 2025 BrickStore. All rights reserved. 
