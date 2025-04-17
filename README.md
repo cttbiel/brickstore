@@ -1,4 +1,4 @@
-# 🏗️ BrickStore - Your Online Construction Marketplace
+# 🏗️ BrickStore - Building Value, One Brick At A Time
 
 BrickStore is an e-commerce platform for construction materials and services. Built with Django (backend) and React (frontend), it allows users to browse products, add them to favorites, manage a shopping cart, and securely complete purchases via Mercado Pago.
 
