@@ -1,49 +1,48 @@
-# 🏗️ BrickStore - Building Value, One Brick At A Time
+# 🏗️ BrickStore — Building Value, One Brick At A Time
 
-BrickStore is an e-commerce platform for construction materials and services. Built with Django (backend) and React (frontend), it allows users to browse products, add them to favorites, manage a shopping cart, and securely complete purchases via Mercado Pago.
-
-## 🚀 Features
-- 🛒 Product listing & search
-- ❤️ Favorites system
-- 🛍️ Shopping cart management
-- 🔐 Secure checkout via Mercado Pago
-- 📦 Order tracking (future update)
-
-## 🛠️ Technologies Used
-- **Backend:** Django, Django REST Framework
-- **Frontend:** React, JavaScript, HTML, CSS
-- **Database:** PostgreSQL (or SQLite for development)
-- **Payments:** Mercado Pago
-
-## 📌 Installation & Setup
-### **1. Clone the repository:**
-```bash
-git clone https://github.com/cttbiel/BrickStore.git
-cd BrickStore
-```
-
-### **2. Backend Setup (Django):**
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
-```
-
-### **3. Frontend Setup (React):**
-```bash
-cd frontend
-npm install
-npm start
-```
-
-## 🤝 Contributing
-Feel free to contribute! Fork the project, create a branch, and submit a pull request. 
-
-## 📧 Contact
-For any questions or suggestions, contact **cttbiel@gmail.com or @CttBiel**.
+**BrickStore** will be an intuitive and modern e-commerce platform focused on the construction market.  
+Designed to connect individuals and businesses looking for materials, services, and solutions in one place.
 
 ---
-© 2025 BrickStore. All rights reserved. 
+
+## 💡 Project Overview
+
+BrickStore's mission is to make buying construction materials easier, smarter, and more efficient for everyone — whether you're building a dream home or managing professional projects.
+
+The platform will include features like:
+
+- 🛒 **Product browsing and smart filtering**
+- ❤️ **Favorite list and recommendations**
+- 🏷️ **Shopping cart management**
+- 🔐 **Secure checkout**
+- 📦 **Order tracking and updates**
+- 💼 **Service listing for contractors and professionals** *(future feature)*
+
+---
+
+## ⚙️ Planned Tech Stack
+
+- **Frontend:** React, JavaScript, HTML, CSS  
+- **Backend:** Django (Python) or Java (TBD)  
+- **Database:** PostgreSQL  
+- **Payments:** Mercado Pago
+
+---
+
+## 🚧 Status
+
+🧱 This project is currently in the **design and research phase**.  
+Development is expected to start soon!  
+
+---
+
+## 📫 Contact
+
+If you're interested in collaborating or following the progress:  
+📧 Email: **cttbiel@gmail.com**  
+🔗 LinkedIn: [Gabriel Carvalho](https://www.linkedin.com/in/cttbiel/)
+
+---
+
+Thanks for visiting! Let’s build the future of construction together.  
+💪🚧✨
