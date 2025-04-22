@@ -1,48 +1,51 @@
-# 🏗️ BrickStore — Building Value, One Brick At A Time
+# 🏗️ BrickStore — Building Value, One Brick at a Time
 
-**BrickStore** will be an intuitive and modern e-commerce platform focused on the construction market.  
-Designed to connect individuals and businesses looking for materials, services, and solutions in one place.
+**BrickStore** is an ongoing personal project designed to become an intuitive and modern e-commerce platform for the construction market.  
+Aiming to connect individuals, small businesses, and professionals looking for materials, services, and smart solutions — all in one place.
 
 ---
 
-## 💡 Project Overview
+## 💡 Vision
 
-BrickStore's mission is to make buying construction materials easier, smarter, and more efficient for everyone — whether you're building a dream home or managing professional projects.
+BrickStore's goal is to simplify the experience of purchasing construction supplies, whether for personal renovations or professional-scale projects.  
 
-The platform will include features like:
+The platform concept includes:
 
-- 🛒 **Product browsing and smart filtering**
-- ❤️ **Favorite list and recommendations**
-- 🏷️ **Shopping cart management**
-- 🔐 **Secure checkout**
+- 🧱 **Product browsing and smart filtering**
+- ❤️ **Favorites & custom recommendations**
+- 🛒 **Shopping cart management**
+- 🔐 **Secure checkout integration**
 - 📦 **Order tracking and updates**
-- 💼 **Service listing for contractors and professionals** *(future feature)*
+- 🧰 **Service showcase for contractors and skilled labor** *(future feature)*
 
 ---
 
 ## ⚙️ Planned Tech Stack
 
 - **Frontend:** React, JavaScript, HTML, CSS  
-- **Backend:** Django (Python) or Java (TBD)  
+- **Backend:** Django (Python) or Java (to be defined)  
 - **Database:** PostgreSQL  
-- **Payments:** Mercado Pago
+- **Payments:** Mercado Pago  
 
 ---
 
-## 🚧 Status
+## 🚧 Development Status
 
-🧱 This project is currently in the **design and research phase**.  
-Development is expected to start soon!  
+🧱 **This project is currently in the concept and design phase.**  
+I’m building prototypes and defining core features before development kicks off.
+
+This repository will evolve as new ideas are shaped into code!
 
 ---
 
-## 📫 Contact
+## 📫 Let's Connect!
 
-If you're interested in collaborating or following the progress:  
+If you’re interested in discussing, collaborating, or simply exchanging ideas:  
+
 📧 Email: **cttbiel@gmail.com**  
 🔗 LinkedIn: [Gabriel Carvalho](https://www.linkedin.com/in/cttbiel/)
 
 ---
 
-Thanks for visiting! Let’s build the future of construction together.  
-💪🚧✨
+Thanks for stopping by!  
+Let’s build value, one brick at a time. 💪🧱✨
