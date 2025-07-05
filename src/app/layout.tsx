@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/logo.ico" type="image/x-icon" />
       </head>
       <body
         className={`${inter.variable} ${cinzel.variable} ${playfair.variable} font-sans`}
