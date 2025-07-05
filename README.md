@@ -1,4 +1,4 @@
-# 🏗️ BrickStore — Building Value, One Brick at a Time
+# 🏗️ BrickStore - Building Value, One Brick at a Time
 
 **BrickStore** é uma plataforma de e-commerce moderna e intuitiva focada no setor da construção civil.  
 Conectando indivíduos, pequenas empresas e profissionais em busca de materiais, serviços e soluções inteligentes — tudo em um só lugar.
@@ -7,9 +7,12 @@ Conectando indivíduos, pequenas empresas e profissionais em busca de materiais,
 
 ## 🚀 Status do Projeto
 
-✅ **Backend Django** - Implementado e funcional  
-✅ **Frontend React** - Implementado e funcional  
-🔄 **Integração Mercado Pago** - Em desenvolvimento  
+✅ **Next.js 15** - Implementado com App Router  
+✅ **TypeScript** - Configurado e funcional  
+✅ **Tailwind CSS** - Design system implementado  
+✅ **Prisma ORM** - Banco de dados configurado  
+🔄 **NextAuth.js** - Autenticação em desenvolvimento  
+🔄 **Mercado Pago** - Integração em desenvolvimento  
 🔄 **Deploy** - Em configuração
 
 ---
@@ -18,38 +21,43 @@ Conectando indivíduos, pequenas empresas e profissionais em busca de materiais,
 
 ### ✅ Implementadas
 
-- 🧱 **Navegação por produtos** com filtros e busca
-- ❤️ **Sistema de favoritos** para usuários logados
-- 🛒 **Carrinho de compras** completo
-- 🔐 **Autenticação de usuários** (login/registro)
-- 📦 **Gestão de pedidos** e histórico
+- 🏠 **Página inicial** com hero section e componentes
+- 🧱 **Navegação responsiva** com header e footer
+- 🛒 **Sistema de carrinho** com contexto React
 - 📱 **Design responsivo** para mobile, tablet e desktop
+- 🎨 **UI moderna** com Tailwind CSS
+- 🔧 **Estrutura escalável** com Next.js App Router
 
 ### 🔄 Em Desenvolvimento
 
+- 🔐 **Autenticação de usuários** com NextAuth.js
+- 📦 **Gestão de produtos** e categorias
+- ❤️ **Sistema de favoritos**
 - 💳 **Integração com Mercado Pago**
-- 📊 **Painel administrativo** avançado
-- 🚚 **Sistema de entrega** e rastreamento
-- ⭐ **Sistema de avaliações** e comentários
+- 📊 **Painel administrativo**
+- 🚚 **Sistema de entrega**
 
 ---
 
 ## 🛠️ Stack Tecnológica
 
-### Backend
+### Frontend & Backend (Full-Stack)
 
-- **Django 4.2.7** - Framework web
-- **Django REST Framework** - API REST
-- **PostgreSQL/SQLite** - Banco de dados
+- **Next.js 15** - Framework React full-stack
+- **TypeScript** - Tipagem estática
+- **Tailwind CSS** - Framework CSS
+- **Prisma** - ORM para banco de dados
+- **NextAuth.js** - Autenticação
 - **Mercado Pago** - Gateway de pagamento
 
-### Frontend
+### Banco de Dados
 
-- **React 18** - Biblioteca JavaScript
-- **Vite** - Build tool
-- **Tailwind CSS** - Framework CSS
-- **React Router** - Roteamento
-- **Axios** - Cliente HTTP
+- **PostgreSQL** - Banco de dados principal
+- **Prisma Client** - ORM type-safe
+
+### Deploy
+
+- **Vercel** - Hospedagem e deploy automático
 
 ---
 
@@ -57,89 +65,90 @@ Conectando indivíduos, pequenas empresas e profissionais em busca de materiais,
 
 ### Pré-requisitos
 
-- Python 3.8+
-- Node.js 16+
+- Node.js 18+
 - npm ou yarn
+- PostgreSQL (local ou remoto)
 
-### Backend
+### Instalação
+
+1. **Clone o repositório**
 
 ```bash
-cd backend
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# ou
-venv\Scripts\activate     # Windows
-
-pip install -r requirements.txt
-python manage.py migrate
-python populate_data.py
-python manage.py runserver
+git clone https://github.com/seu-usuario/brickstore.git
+cd brickstore
 ```
 
-### Frontend
+2. **Instale as dependências**
 
 ```bash
-cd frontend
 npm install
+```
+
+3. **Configure as variáveis de ambiente**
+
+```bash
+cp .env.example .env.local
+```
+
+Edite o arquivo `.env.local` com suas configurações:
+
+```env
+# Database
+DATABASE_URL="postgresql://username:password@localhost:5432/brickstore"
+
+# NextAuth
+NEXTAUTH_URL="http://localhost:3000"
+NEXTAUTH_SECRET="your-secret-key-here"
+
+# Mercado Pago
+MERCADO_PAGO_ACCESS_TOKEN="your-mercado-pago-access-token"
+MERCADO_PAGO_PUBLIC_KEY="your-mercado-pago-public-key"
+```
+
+4. **Configure o banco de dados**
+
+```bash
+npx prisma generate
+npx prisma db push
+```
+
+5. **Execute o projeto**
+
+```bash
 npm run dev
 ```
 
 ### Acessos
 
 - **Frontend:** http://localhost:3000
-- **Backend API:** http://localhost:8000/api
-- **Admin Django:** http://localhost:8000/admin
-  - Usuário: `admin`
-  - Senha: `admin123`
+- **Prisma Studio:** http://localhost:5555 (execute `npx prisma studio`)
 
 ---
 
 ## 📁 Estrutura do Projeto
 
 ```
-BrickStore/
-├── backend/           # API Django
-│   ├── brickstore/    # Configurações principais
-│   ├── products/      # App de produtos
-│   ├── users/         # App de usuários
-│   ├── orders/        # App de pedidos
-│   └── requirements.txt
-├── frontend/          # Aplicação React
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   └── contexts/
-│   └── package.json
-└── assets/            # Logo e recursos
+brickstore/
+├── src/
+│   ├── app/                 # App Router (Next.js 13+)
+│   │   ├── layout.tsx       # Layout principal
+│   │   ├── page.tsx         # Página inicial
+│   │   └── globals.css      # Estilos globais
+│   ├── components/          # Componentes React
+│   │   ├── header.tsx       # Cabeçalho
+│   │   ├── footer.tsx       # Rodapé
+│   │   ├── hero.tsx         # Hero section
+│   │   ├── providers.tsx    # Providers (NextAuth, etc.)
+│   │   └── ...              # Outros componentes
+│   ├── contexts/            # Contextos React
+│   │   └── cart-context.tsx # Contexto do carrinho
+│   └── lib/                 # Utilitários
+│       └── utils.ts         # Funções utilitárias
+├── prisma/                  # Configuração do banco
+│   └── schema.prisma        # Schema do Prisma
+├── public/                  # Assets estáticos
+└── package.json
 ```
-
----
-
-## 🔗 API Endpoints
-
-### Autenticação
-
-- `POST /api/register/` - Registro
-- `POST /api/login/` - Login
-- `POST /api/logout/` - Logout
-
-### Produtos
-
-- `GET /api/products/` - Listar produtos
-- `GET /api/categories/` - Listar categorias
-- `POST /api/products/{id}/toggle_favorite/` - Favoritar
-
-### Carrinho
-
-- `GET /api/cart/` - Itens do carrinho
-- `POST /api/cart/` - Adicionar item
-- `DELETE /api/cart/{id}/` - Remover item
-
-### Pedidos
-
-- `GET /api/orders/` - Listar pedidos
-- `POST /api/orders/checkout/` - Finalizar compra
 
 ---
 
@@ -162,37 +171,43 @@ BrickStore/
 
 ## 🌐 Deploy
 
-### Frontend (Vercel)
+### Vercel (Recomendado)
 
 1. Conecte o repositório ao Vercel
 2. Configure as variáveis de ambiente
 3. Deploy automático
 
-### Backend (Railway/Render)
+### Variáveis de Ambiente para Produção
 
-1. Conecte o repositório
-2. Configure PostgreSQL
-3. Configure variáveis de ambiente
+```env
+DATABASE_URL="postgresql://..."
+NEXTAUTH_URL="https://seu-dominio.vercel.app"
+NEXTAUTH_SECRET="seu-secret-produção"
+MERCADO_PAGO_ACCESS_TOKEN="seu-token-produção"
+MERCADO_PAGO_PUBLIC_KEY="sua-chave-pública-produção"
+```
 
 ---
 
 ## 📝 Próximos Passos
 
-- [ ] Integração completa com Mercado Pago
+- [ ] Implementar autenticação com NextAuth.js
+- [ ] Criar páginas de produtos e categorias
+- [ ] Integrar Mercado Pago
+- [ ] Implementar sistema de favoritos
+- [ ] Criar painel administrativo
 - [ ] Sistema de notificações
 - [ ] Relatórios e analytics
 - [ ] App mobile (React Native)
-- [ ] Sistema de cupons e promoções
-- [ ] Integração com sistemas de estoque
 
 ---
 
 ## 🤝 Contribuição
 
 1. Fork o projeto
-2. Crie uma branch para sua feature
-3. Commit suas mudanças
-4. Push para a branch
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
 ---
