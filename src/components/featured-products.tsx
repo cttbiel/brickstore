@@ -112,15 +112,15 @@ export function FeaturedProducts() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-primary-300/80 hover:scale-105 transition-all duration-200 overflow-hidden group border-2 border-primary-300 relative"
+              className="bg-white border-2 border-[#E67E22] rounded-2xl shadow-md hover:shadow-lg transition-all duration-200 flex flex-col overflow-hidden group relative min-h-[420px]"
             >
               {/* Badge de desconto */}
               {product.originalPrice > product.price && (
-                <span className="absolute top-4 left-4 bg-primary-500 text-white text-sm font-bold px-4 py-2 rounded-full shadow-md z-10 animate-pulse border-2 border-primary-200 group-hover:bg-primary-600">
+                <span className="absolute top-4 left-4 bg-[#F39C12] text-white text-xs font-bold px-4 py-2 rounded-full shadow border-2 border-[#FFF] z-10 animate-pulse">
                   -
                   {Math.round(
                     ((product.originalPrice - product.price) /
@@ -131,11 +131,11 @@ export function FeaturedProducts() {
                 </span>
               )}
               {/* Botão de favorito */}
-              <button className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-md hover:bg-primary-50 transition-colors z-10 border border-primary-100">
-                <Heart className="h-5 w-5 text-primary-500 group-hover:text-primary-600 transition-colors" />
+              <button className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-md hover:bg-[#FAF3E0] transition-colors z-10 border border-[#E67E22]">
+                <Heart className="h-5 w-5 text-[#E67E22] group-hover:text-[#F39C12] transition-colors" />
               </button>
               {/* Imagem do produto */}
-              <div className="flex items-center justify-center h-40 bg-gray-100">
+              <div className="flex items-center justify-center h-40 bg-[#FAF3E0] border-b-2 border-[#E67E22]">
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -146,9 +146,9 @@ export function FeaturedProducts() {
                 />
               </div>
               {/* Info */}
-              <div className="p-6 flex flex-col gap-2">
-                <Link href={`/products/${product.id}`} className="block">
-                  <h3 className="font-bold text-xl text-black mb-1 line-clamp-2 group-hover:text-primary-600 transition-colors font-serif">
+              <div className="p-6 flex flex-col gap-2 flex-1">
+                <Link href="/site-em-construcao" className="block">
+                  <h3 className="font-bold text-xl text-[#2C2C2C] mb-1 line-clamp-2 group-hover:text-[#E67E22] transition-colors font-serif">
                     {product.name}
                   </h3>
                 </Link>
@@ -172,7 +172,7 @@ export function FeaturedProducts() {
                 </div>
                 {/* Preço */}
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-2xl font-extrabold text-primary-600">
+                  <span className="text-2xl font-extrabold text-[#E67E22]">
                     R$ {product.price.toFixed(2).replace(".", ",")}
                   </span>
                   {product.originalPrice > product.price && (
@@ -184,7 +184,7 @@ export function FeaturedProducts() {
                 {/* Botão adicionar ao carrinho */}
                 <button
                   onClick={() => handleAddToCart(product)}
-                  className="w-full bg-primary-500 text-white py-3 px-6 rounded-xl font-bold shadow hover:bg-primary-600 hover:scale-105 transition-all flex items-center justify-center gap-2 text-lg mt-2 border-2 border-primary-400"
+                  className="w-full bg-[#E67E22] text-white py-3 px-6 rounded-xl font-bold shadow hover:bg-[#F39C12] hover:scale-105 transition-all flex items-center justify-center gap-2 text-lg mt-2 border-2 border-[#A04000]"
                 >
                   <ShoppingCart className="h-5 w-5" />
                   <span>Adicionar ao Carrinho</span>
@@ -194,10 +194,11 @@ export function FeaturedProducts() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        {/* Botão de ver todos os produtos */}
+        <div className="w-full flex justify-center mt-10">
           <Link
             href="/products"
-            className="inline-flex items-center px-8 py-3 bg-primary-500 text-white font-bold rounded-lg shadow-lg hover:bg-primary-600 hover:scale-105 transition-all text-lg"
+            className="inline-flex items-center px-8 py-3 bg-[#E67E22] text-white font-bold rounded-lg shadow-lg border-2 border-[#A04000] hover:bg-[#F39C12] hover:text-white transition-all text-lg"
           >
             Ver Todos os Produtos
           </Link>

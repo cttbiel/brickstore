@@ -240,19 +240,31 @@ const filteredProducts = products.filter(
 
 export default function ProductsPage() {
   return (
-    <main className="min-h-screen bg-white py-16">
+    <main className="min-h-screen bg-[#FAF3E0] py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-black mb-10 font-serif text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[#2C2C2C] mb-10 font-serif text-center">
           Produtos
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-primary-300/80 hover:scale-105 transition-all duration-200 overflow-hidden group border-2 border-primary-300 relative flex flex-col"
+              className="bg-white border-2 border-[#E67E22] rounded-2xl shadow-md hover:shadow-lg transition-all duration-200 flex flex-col overflow-hidden group relative min-h-[420px]"
             >
+              {/* Badge de desconto */}
+              {product.originalPrice > product.price && (
+                <span className="absolute top-4 left-4 bg-[#F39C12] text-white text-xs font-bold px-4 py-2 rounded-full shadow border-2 border-[#FFF] z-10 animate-pulse">
+                  -
+                  {Math.round(
+                    ((product.originalPrice - product.price) /
+                      product.originalPrice) *
+                      100
+                  )}
+                  %
+                </span>
+              )}
               {/* Imagem do produto */}
-              <div className="flex items-center justify-center h-40 bg-gray-100">
+              <div className="flex items-center justify-center h-40 bg-[#FAF3E0] border-b-2 border-[#E67E22]">
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -264,7 +276,7 @@ export default function ProductsPage() {
               </div>
               {/* Info */}
               <div className="p-6 flex flex-col gap-2 flex-1">
-                <h3 className="font-bold text-xl text-black mb-1 line-clamp-2 group-hover:text-primary-600 transition-colors font-serif">
+                <h3 className="font-bold text-xl text-[#2C2C2C] mb-1 line-clamp-2 group-hover:text-[#E67E22] transition-colors font-serif">
                   {product.name}
                 </h3>
                 {/* Rating */}
@@ -287,7 +299,7 @@ export default function ProductsPage() {
                 </div>
                 {/* Preço */}
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-2xl font-extrabold text-primary-600">
+                  <span className="text-2xl font-extrabold text-[#E67E22]">
                     R$ {product.price.toFixed(2).replace(".", ",")}
                   </span>
                   {product.originalPrice > product.price && (
@@ -297,7 +309,7 @@ export default function ProductsPage() {
                   )}
                 </div>
                 {/* Botão adicionar ao carrinho */}
-                <button className="w-full bg-primary-500 text-white py-3 px-6 rounded-xl font-bold shadow hover:bg-primary-600 hover:scale-105 transition-all flex items-center justify-center gap-2 text-lg mt-2 border-2 border-primary-400">
+                <button className="w-full bg-[#E67E22] text-white py-3 px-6 rounded-xl font-bold shadow hover:bg-[#F39C12] hover:scale-105 transition-all flex items-center justify-center gap-2 text-lg mt-2 border-2 border-[#A04000]">
                   <ShoppingCart className="h-5 w-5" />
                   <span>Adicionar ao Carrinho</span>
                 </button>

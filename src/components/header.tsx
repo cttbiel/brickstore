@@ -15,9 +15,9 @@ export function Header() {
   const navigation = [
     { name: "Início", href: "/" },
     { name: "Produtos", href: "/products" },
-    { name: "Categorias", href: "/categories" },
-    { name: "Sobre", href: "/about" },
-    { name: "Contato", href: "/contact" },
+    { name: "Categorias", href: "/categorias" },
+    { name: "Sobre", href: "/sobre" },
+    { name: "Contato", href: "/contato" },
   ];
 
   return (
@@ -51,10 +51,10 @@ export function Header() {
 
           {/* Right side icons */}
           <div className="flex items-center gap-4">
-            <Link href="/favorites" className="relative group">
+            <Link href="/site-em-construcao" className="relative group">
               <Heart className="h-6 w-6 text-gray-700 group-hover:text-primary-500 transition-colors" />
             </Link>
-            <Link href="/cart" className="relative group">
+            <Link href="/site-em-construcao" className="relative group">
               <ShoppingCart className="h-6 w-6 text-gray-700 group-hover:text-primary-500 transition-colors" />
               {itemCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-primary-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold shadow">
@@ -63,11 +63,11 @@ export function Header() {
               )}
             </Link>
             {session ? (
-              <Link href="/profile">
+              <Link href="/site-em-construcao">
                 <User className="h-6 w-6 text-gray-700 hover:text-primary-500 transition-colors" />
               </Link>
             ) : (
-              <Link href="/auth/signin">
+              <Link href="/login">
                 <User className="h-6 w-6 text-gray-700 hover:text-primary-500 transition-colors" />
               </Link>
             )}

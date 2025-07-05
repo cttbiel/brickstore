@@ -46,41 +46,44 @@ export function FeaturedCategories() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {categories.map((category) => (
-            <Link
+            <div
               key={category.id}
-              href={`/categories/${category.id}`}
-              className="group block rounded-2xl bg-white border-2 border-primary-300 shadow-lg hover:shadow-primary-200/80 hover:scale-105 hover:border-primary-500 transition-all duration-200 overflow-hidden relative"
+              className="relative bg-[#FFF] border-2 border-[#E67E22] rounded-2xl shadow-md hover:shadow-lg transition-all duration-200 flex flex-col items-center p-8 pt-10 group min-h-[320px]"
             >
-              <span className="absolute top-4 right-4 bg-primary-500 text-white text-sm font-bold px-4 py-2 rounded-full shadow-md z-10 group-hover:scale-110 group-hover:bg-primary-600 border-2 border-primary-200 transition-transform">
+              {/* Badge de quantidade */}
+              <span className="absolute -top-4 left-4 bg-[#F39C12] text-white text-xs font-bold px-4 py-2 rounded-full shadow border-2 border-[#FFF] z-10">
                 {category.productCount} produtos
               </span>
-              <div className="flex items-center justify-center h-24">
-                <category.icon className="h-14 w-14 text-primary-500 group-hover:text-primary-600 transition-colors drop-shadow" />
+              {/* Ícone */}
+              <div className="flex items-center justify-center h-20 w-20 rounded-full bg-[#FAF3E0] mb-4 border-2 border-[#E67E22] shadow">
+                <category.icon className="h-10 w-10 text-[#E67E22]" />
               </div>
-              <div className="p-8 pt-2 flex flex-col items-center">
-                <h3 className="text-xl font-bold text-black mb-2 text-center group-hover:text-primary-600 transition-colors font-serif">
-                  {category.name}
-                </h3>
-                <p className="text-gray-600 text-base mb-4 text-center line-clamp-2">
-                  {category.description}
-                </p>
-                <div className="flex items-center justify-center gap-2 mt-2">
-                  <span className="text-base text-primary-500 font-semibold group-hover:underline">
-                    Ver mais
-                  </span>
-                  <ArrowRight className="h-5 w-5 text-primary-500 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            </Link>
+              {/* Título */}
+              <h3 className="text-xl font-extrabold text-[#2C2C2C] mb-2 text-center group-hover:text-[#E67E22] transition-colors">
+                {category.name}
+              </h3>
+              {/* Descrição */}
+              <p className="text-gray-700 text-base mb-6 text-center line-clamp-2">
+                {category.description}
+              </p>
+              {/* Botão */}
+              <Link
+                href="/site-em-construcao"
+                className="inline-flex items-center px-6 py-2 bg-[#E67E22] text-white font-bold rounded-lg shadow hover:bg-[#F39C12] transition-all text-base mt-auto"
+              >
+                Ver mais <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        {/* Botão de ver todas as categorias */}
+        <div className="w-full flex justify-center mt-10">
           <Link
-            href="/categories"
-            className="inline-flex items-center px-8 py-3 bg-primary-500 text-white font-bold rounded-lg shadow-lg hover:bg-primary-600 hover:scale-105 transition-all text-lg"
+            href="/site-em-construcao"
+            className="inline-flex items-center px-8 py-3 bg-[#E67E22] text-white font-bold rounded-lg shadow-lg border-2 border-[#A04000] hover:bg-[#F39C12] hover:text-white transition-all text-lg"
           >
             Ver Todas as Categorias
             <ArrowRight className="ml-2 h-5 w-5" />

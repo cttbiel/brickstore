@@ -4,7 +4,7 @@ import { Instagram, Linkedin, Globe, Mail, Phone, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-primary-600 text-white pt-12 pb-6">
+    <footer className="bg-black text-white pt-12 pb-8 px-4 mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 border-b-4 border-primary-400 pb-10 mb-8">
           {/* Brand */}
@@ -70,7 +70,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/categories"
+                  href="/categorias"
                   className="hover:text-primary-200 transition-colors"
                 >
                   Categorias
@@ -78,7 +78,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/sobre"
                   className="hover:text-primary-200 transition-colors"
                 >
                   Sobre Nós
@@ -86,7 +86,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="/contato"
                   className="hover:text-primary-200 transition-colors"
                 >
                   Contato
@@ -101,7 +101,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/help"
+                  href="/site-em-construcao"
                   className="hover:text-primary-200 transition-colors"
                 >
                   Central de Ajuda
@@ -109,7 +109,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/shipping"
+                  href="/site-em-construcao"
                   className="hover:text-primary-200 transition-colors"
                 >
                   Política de Entrega
@@ -117,7 +117,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/returns"
+                  href="/site-em-construcao"
                   className="hover:text-primary-200 transition-colors"
                 >
                   Trocas e Devoluções
@@ -125,7 +125,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/warranty"
+                  href="/site-em-construcao"
                   className="hover:text-primary-200 transition-colors"
                 >
                   Garantia
@@ -159,13 +159,13 @@ export function Footer() {
           <p>© 2025 BrickStore. Todos os direitos reservados.</p>
           <div className="flex gap-6">
             <Link
-              href="/privacy"
+              href="/site-em-construcao"
               className="hover:text-primary-300 transition-colors"
             >
               Política de Privacidade
             </Link>
             <Link
-              href="/terms"
+              href="/site-em-construcao"
               className="hover:text-primary-300 transition-colors"
             >
               Termos de Uso
