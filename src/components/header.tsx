@@ -54,10 +54,20 @@ export function Header() {
             <Link href="/site-em-construcao" className="relative group">
               <Heart className="h-6 w-6 text-gray-700 group-hover:text-primary-500 transition-colors" />
             </Link>
-            <Link href="/site-em-construcao" className="relative group">
-              <ShoppingCart className="h-6 w-6 text-gray-700 group-hover:text-primary-500 transition-colors" />
+            <Link href="/checkout" className="relative group">
+              <ShoppingCart
+                className={`h-6 w-6 text-gray-700 group-hover:text-[#E67E22] transition-all duration-300 group-hover:scale-110 ${
+                  state.isAnimating ? "cart-animate" : ""
+                }`}
+              />
               {state.itemCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-primary-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold shadow">
+                <span
+                  className={`absolute -top-2 -right-2 bg-[#E67E22] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold shadow-lg border-2 border-[#F39C12] transition-all duration-300 ${
+                    state.isAnimating
+                      ? "cart-badge-animate scale-125"
+                      : "cart-badge-animate"
+                  }`}
+                >
                   {state.itemCount}
                 </span>
               )}

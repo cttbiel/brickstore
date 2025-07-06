@@ -1,10 +1,32 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useCart } from "@/contexts/cart-context";
 import { FeaturedCategories } from "@/components/featured-categories";
 import { FeaturedProducts } from "@/components/featured-products";
 import { WhyChooseUs } from "@/components/why-choose-us";
 
 export default function HomePage() {
+  const router = useRouter();
+  const { addItem } = useCart();
+
+  const handleBuyNow = (product: {
+    id: string;
+    name: string;
+    price: number;
+    image: string;
+  }) => {
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+    });
+    router.push("/checkout");
+  };
+
   return (
     <div className="bg-[#FAF3E0] min-h-screen w-full">
       {/* HERO PRINCIPAL */}
@@ -81,7 +103,17 @@ export default function HomePage() {
               R$ 1,09
             </span>
           </p>
-          <button className="bg-[#E67E22] text-white font-bold px-6 py-2 rounded-lg mt-2 hover:bg-[#F39C12] transition">
+          <button
+            className="bg-[#E67E22] text-white font-bold px-6 py-2 rounded-lg mt-2 hover:bg-[#F39C12] transition cursor-pointer"
+            onClick={() =>
+              handleBuyNow({
+                id: "1",
+                name: "Tijolo Cerâmico 6 Furos",
+                price: 0.89,
+                image: "/tijolo.jpeg",
+              })
+            }
+          >
             Comprar agora
           </button>
         </div>
@@ -122,7 +154,17 @@ export default function HomePage() {
               R$ 349,90
             </span>
           </p>
-          <button className="bg-[#F39C12] text-white font-bold px-6 py-2 rounded-lg mt-2 hover:bg-[#E67E22] transition">
+          <button
+            className="bg-[#F39C12] text-white font-bold px-6 py-2 rounded-lg mt-2 hover:bg-[#E67E22] transition cursor-pointer"
+            onClick={() =>
+              handleBuyNow({
+                id: "9",
+                name: "Furadeira de Impacto Makita",
+                price: 299.9,
+                image: "/furadeiradeimpactomakita.jpg",
+              })
+            }
+          >
             Comprar agora
           </button>
         </div>

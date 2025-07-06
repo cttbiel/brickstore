@@ -1,5 +1,8 @@
+"use client";
+
 import { ShoppingCart, Star } from "lucide-react";
 import Image from "next/image";
+import { useCart } from "@/contexts/cart-context";
 
 const products = [
   {
@@ -239,6 +242,17 @@ const filteredProducts = products.filter(
 );
 
 export default function ProductsPage() {
+  const { addItem } = useCart();
+
+  const handleAddToCart = (product: (typeof products)[0]) => {
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+    });
+  };
+
   return (
     <main className="min-h-screen bg-[#FAF3E0] py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -275,7 +289,7 @@ export default function ProductsPage() {
                 />
               </div>
               {/* Info */}
-              <div className="p-6 flex flex-col gap-2 flex-1">
+              <div className="p-6 flex flex-col gap-2 flex-1 justify-between min-h-[210px]">
                 <h3 className="font-bold text-xl text-[#2C2C2C] mb-1 line-clamp-2 group-hover:text-[#E67E22] transition-colors font-serif">
                   {product.name}
                 </h3>
@@ -309,7 +323,10 @@ export default function ProductsPage() {
                   )}
                 </div>
                 {/* Botão adicionar ao carrinho */}
-                <button className="w-full bg-[#E67E22] text-white py-3 px-6 rounded-xl font-bold shadow hover:bg-[#F39C12] hover:scale-105 transition-all flex items-center justify-center gap-2 text-lg mt-2 border-2 border-[#A04000]">
+                <button
+                  onClick={() => handleAddToCart(product)}
+                  className="w-full bg-[#E67E22] text-white py-3 px-6 rounded-xl font-bold shadow hover:bg-[#F39C12] hover:scale-105 transition-all flex items-center justify-center gap-2 text-lg mt-2 border-2 border-[#A04000] cursor-pointer"
+                >
                   <ShoppingCart className="h-5 w-5" />
                   <span>Adicionar ao Carrinho</span>
                 </button>

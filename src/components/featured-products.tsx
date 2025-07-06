@@ -98,6 +98,9 @@ export function FeaturedProducts() {
       price: product.price,
       image: product.image,
     });
+
+    // Mostrar feedback visual (opcional)
+    // Você pode adicionar um toast notification aqui
   };
 
   return (
@@ -131,7 +134,7 @@ export function FeaturedProducts() {
                 </span>
               )}
               {/* Botão de favorito */}
-              <button className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-md hover:bg-[#FAF3E0] transition-colors z-10 border border-[#E67E22]">
+              <button className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-md hover:bg-[#FAF3E0] transition-colors z-10 border border-[#E67E22] cursor-pointer">
                 <Heart className="h-5 w-5 text-[#E67E22] group-hover:text-[#F39C12] transition-colors" />
               </button>
               {/* Imagem do produto */}
@@ -146,7 +149,7 @@ export function FeaturedProducts() {
                 />
               </div>
               {/* Info */}
-              <div className="p-6 flex flex-col gap-2 flex-1">
+              <div className="p-6 flex flex-col gap-2 flex-1 justify-between min-h-[210px]">
                 <Link href="/site-em-construcao" className="block">
                   <h3 className="font-bold text-xl text-[#2C2C2C] mb-1 line-clamp-2 group-hover:text-[#E67E22] transition-colors font-serif">
                     {product.name}
@@ -184,7 +187,7 @@ export function FeaturedProducts() {
                 {/* Botão adicionar ao carrinho */}
                 <button
                   onClick={() => handleAddToCart(product)}
-                  className="w-full bg-[#E67E22] text-white py-3 px-6 rounded-xl font-bold shadow hover:bg-[#F39C12] hover:scale-105 transition-all flex items-center justify-center gap-2 text-lg mt-2 border-2 border-[#A04000]"
+                  className="w-full bg-[#E67E22] text-white py-3 px-6 rounded-xl font-bold shadow hover:bg-[#F39C12] hover:scale-105 transition-all flex items-center justify-center gap-2 text-lg mt-2 border-2 border-[#A04000] cursor-pointer"
                 >
                   <ShoppingCart className="h-5 w-5" />
                   <span>Adicionar ao Carrinho</span>

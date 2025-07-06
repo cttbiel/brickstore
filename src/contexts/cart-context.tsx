@@ -14,6 +14,7 @@ interface CartState {
   items: CartItem[];
   itemCount: number;
   total: number;
+  isAnimating: boolean;
 }
 
 type CartAction =
@@ -21,7 +22,8 @@ type CartAction =
   | { type: "REMOVE_ITEM"; payload: string }
   | { type: "UPDATE_QUANTITY"; payload: { id: string; quantity: number } }
   | { type: "CLEAR_CART" }
-  | { type: "LOAD_CART"; payload: CartItem[] };
+  | { type: "LOAD_CART"; payload: CartItem[] }
+  | { type: "SET_ANIMATING"; payload: boolean };
 
 const CartContext = createContext<{
   state: CartState;
@@ -48,6 +50,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
           ),
           itemCount: state.itemCount + 1,
           total: state.total + action.payload.price,
+          isAnimating: false,
         };
       }
 
@@ -56,6 +59,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
         items: [...state.items, { ...action.payload, quantity: 1 }],
         itemCount: state.itemCount + 1,
         total: state.total + action.payload.price,
+        isAnimating: false,
       };
     }
 
@@ -68,6 +72,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
         items: state.items.filter((item) => item.id !== action.payload),
         itemCount: state.itemCount - item.quantity,
         total: state.total - item.price * item.quantity,
+        isAnimating: false,
       };
     }
 
@@ -83,6 +88,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
           items: state.items.filter((item) => item.id !== action.payload.id),
           itemCount: state.itemCount - item.quantity,
           total: state.total - item.price * item.quantity,
+          isAnimating: false,
         };
       }
 
@@ -95,6 +101,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
         ),
         itemCount: state.itemCount + quantityDiff,
         total: state.total + item.price * quantityDiff,
+        isAnimating: false,
       };
     }
 
@@ -103,6 +110,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
         items: [],
         itemCount: 0,
         total: 0,
+        isAnimating: false,
       };
 
     case "LOAD_CART": {
@@ -119,8 +127,15 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
         items: action.payload,
         itemCount,
         total,
+        isAnimating: false,
       };
     }
+
+    case "SET_ANIMATING":
+      return {
+        ...state,
+        isAnimating: action.payload,
+      };
 
     default:
       return state;
@@ -132,6 +147,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     items: [],
     itemCount: 0,
     total: 0,
+    isAnimating: false,
   });
 
   // Load cart from localStorage on mount
@@ -141,8 +157,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       try {
         const cartItems = JSON.parse(savedCart);
         dispatch({ type: "LOAD_CART", payload: cartItems });
-      } catch (error) {
-        console.error("Error loading cart from localStorage:", error);
+      } catch {
+        console.error("Error loading cart from localStorage");
       }
     }
   }, []);
@@ -154,6 +170,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const addItem = (item: Omit<CartItem, "quantity">) => {
     dispatch({ type: "ADD_ITEM", payload: { ...item, quantity: 1 } });
+    // Trigger animation
+    dispatch({ type: "SET_ANIMATING", payload: true });
+    setTimeout(() => {
+      dispatch({ type: "SET_ANIMATING", payload: false });
+    }, 1000);
   };
 
   const removeItem = (id: string) => {
