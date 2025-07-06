@@ -9,25 +9,25 @@ export default function HomePage() {
     <div className="bg-[#FAF3E0] min-h-screen w-full">
       {/* HERO PRINCIPAL */}
       <section className="w-full bg-[#E67E22] flex flex-col md:flex-row items-center justify-between px-4 md:px-16 py-12 gap-8 border-b-4 border-[#A04000]">
-        <div className="flex-1 flex flex-col gap-6 items-start justify-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg leading-tight">
-            Construindo valor,{" "}
-            <span className="text-[#F39C12]">um tijolo por vez</span>
+        <div className="flex-1 flex flex-col items-center justify-center text-center z-10">
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight font-serif drop-shadow-xl">
+            <span className="block text-white">Construindo valor,</span>
+            <span className="block text-[#F39C12]">um tijolo por vez</span>
           </h1>
-          <p className="text-lg md:text-xl text-[#FFF] font-medium max-w-xl">
+          <p className="text-base md:text-xl text-orange-50 font-medium mt-6 max-w-xl drop-shadow-lg">
             O e-commerce brasileiro para quem faz acontecer. Materiais de
             construção, preço justo, entrega rápida e atendimento de verdade.
           </p>
-          <div className="flex gap-4 mt-4">
+          <div className="flex flex-row gap-2 mt-4 justify-center w-full max-w-xs">
             <Link
               href="/products"
-              className="bg-[#FFF] text-[#E67E22] font-bold px-8 py-3 rounded-lg shadow hover:bg-[#F39C12] hover:text-white border-2 border-[#E67E22] transition-all text-lg"
+              className="px-3 py-2 bg-[#FFF] text-[#E67E22] font-bold rounded-lg shadow hover:bg-[#F39C12] hover:text-white border-2 border-[#E67E22] transition-all text-sm md:text-lg text-center whitespace-nowrap min-w-fit"
             >
               Ver Produtos
             </Link>
             <Link
               href="/categorias"
-              className="bg-[#F39C12] text-white font-bold px-8 py-3 rounded-lg shadow hover:bg-[#FFF] hover:text-[#E67E22] border-2 border-[#F39C12] transition-all text-lg"
+              className="px-3 py-2 bg-[#F39C12] text-white font-bold rounded-lg shadow hover:bg-[#FFF] hover:text-[#E67E22] border-2 border-[#F39C12] transition-all text-sm md:text-lg text-center whitespace-nowrap min-w-fit"
             >
               Explorar Categorias
             </Link>
@@ -40,7 +40,7 @@ export default function HomePage() {
             </span>
             <Image
               src="/buildingvalue.png"
-              alt="Pessoa construindo parede de tijolos"
+              alt="Gabriel Carvalho, dono da BrickStore ao lado da logo da marca."
               width={420}
               height={320}
               className="rounded-2xl shadow-2xl border-4 border-[#A04000] object-cover bg-[#FFF] w-full h-auto"
@@ -137,7 +137,7 @@ export default function HomePage() {
       </section>
 
       {/* DIFERENCIAIS */}
-      <section className="w-full max-w-7xl mx-auto px-4 md:px-0 py-12">
+      <section className="w-full max-w-7xl mx-auto px-4 md:px-0 pt-12 pb-4">
         <WhyChooseUs />
       </section>
     </div>

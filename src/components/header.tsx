@@ -10,7 +10,7 @@ import { useCart } from "@/contexts/cart-context";
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { data: session } = useSession();
-  const { itemCount } = useCart();
+  const { state } = useCart();
 
   const navigation = [
     { name: "Início", href: "/" },
@@ -56,9 +56,9 @@ export function Header() {
             </Link>
             <Link href="/site-em-construcao" className="relative group">
               <ShoppingCart className="h-6 w-6 text-gray-700 group-hover:text-primary-500 transition-colors" />
-              {itemCount > 0 && (
+              {state.itemCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-primary-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold shadow">
-                  {itemCount}
+                  {state.itemCount}
                 </span>
               )}
             </Link>

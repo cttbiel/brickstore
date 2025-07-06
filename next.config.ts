@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: ['localhost'],
+    unoptimized: false,
+  },
+  experimental: {
+    optimizePackageImports: ['lucide-react'],
+  },
+  compress: true,
+  poweredByHeader: false,
 };
 
 export default nextConfig;

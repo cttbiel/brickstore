@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function SiteEmConstrucao() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-[#FAF3E0] p-8">
-      <div className="bg-white border-2 border-[#E67E22] rounded-2xl shadow-xl flex flex-col items-center p-10 max-w-lg w-full">
+    <main className="flex flex-col items-center w-full bg-[#FAF3E0] min-h-screen py-8 md:pt-20 md:pb-4">
+      <div className="bg-white border-2 border-[#E67E22] rounded-2xl shadow-xl flex flex-col items-center p-10 max-w-lg w-full mx-auto">
         <Image
           src="/site em construcao.png"
           alt="Site em construção"
@@ -17,7 +17,8 @@ export default function SiteEmConstrucao() {
           Página em Construção
         </h1>
         <p className="text-lg text-[#E67E22] text-center max-w-xl mb-6 font-semibold">
-          Nos desculpe, estamos construindo o site.<br />
+          Nos desculpe, estamos construindo o site.
+          <br />
           Em breve você poderá visualizar esta página!
         </p>
         <Link
