@@ -163,8 +163,8 @@ O BrickStore é totalmente responsivo e otimizado para:
 
 **Desenvolvedor:** Gabriel Carvalho  
 **Email:** cttbiel@gmail.com  
-**LinkedIn:** [Perfil do LinkedIn]  
-**Portfolio:** [Link do Portfolio]
+**LinkedIn:** [[Link do LinkedIn](https://www.linkedin.com/in/cttbiel/)]  
+**Portfolio:** [[Link do Portfolio](https://gabrielcarvalho.vercel.app/)]
 
 ---
 
